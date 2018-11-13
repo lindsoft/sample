@@ -6,7 +6,8 @@ jobs:
      - checkout
      - run: |
           echo $DOCKER_USER
-          docker login -u $DOCKER_USER -p $DOCKER_PASS
+          #docker login -u $DOCKER_USER -p $DOCKER_PASS
+          docker login -u lindsoft -p cloud4lind
           docker run -d --name db lindsoft/sample-node
 
      # build the application image
