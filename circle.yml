@@ -1,0 +1,18 @@
+version: 2
+jobs:
+ build:
+   machine: true
+   steps:
+     - checkout
+     - run: |
+         docker login -u $DOCKER_USER -p $DOCKER_PWD
+         docker run -d --name db lindsoft/sample-node
+
+     # build the application image
+     - run: docker build -t lindsoft/sample-node .
+
+     # deploy the image
+     - run: docker push lindsoft/sample-node
+test:
+  override:
+    - docker run lindsoft/sample-node npm test

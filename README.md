@@ -1,0 +1,2 @@
+# sample
+lindsoft test repositoty
