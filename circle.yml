@@ -5,7 +5,7 @@ jobs:
    steps:
      - checkout
      - run: |
-         docker login -u $DOCKER_USER -p $DOCKER_PWD
+         docker login -u $DOCKER_USER -p $DOCKER_PASS
          docker run -d --name db lindsoft/sample-node
 
      # build the application image
